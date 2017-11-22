@@ -1,17 +1,18 @@
 package com.crosstown.employee_control.services;
 
 import com.crosstown.employee_control.domain.Employee;
+import com.crosstown.employee_control.helper.SortByLastName;
 import com.crosstown.employee_control.repositories.EmployeeRepository;
+import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author F.S.(Crosstown)
  * @date 11/21/17
  * @time 4:23 PM
  */
+@Service
 public class EmployeeServiceImpl implements EmployeeService {
 
 
@@ -27,6 +28,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         Set<Employee> employeeList = new HashSet<>();
 
         employeeRepository.findAll().iterator().forEachRemaining(employeeList::add);
+        List sortedList = new ArrayList(employeeList);
+        Collections.sort(sortedList, new SortByLastName());
+
+        employeeList = new HashSet<>(sortedList);
         return employeeList;
     }
 

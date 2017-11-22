@@ -10,7 +10,7 @@ import java.util.Optional;
  * @date 11/21/17
  * @time 4:07 PM
  */
-public interface SupervisorRepository extends CrudRepository<SupervisorRepository, Long>{
+public interface SupervisorRepository extends CrudRepository<Supervisor, Long>{
 
 
     Optional<Supervisor> findByLastName(String lastName);

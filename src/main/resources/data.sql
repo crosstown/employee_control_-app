@@ -26,4 +26,9 @@ INSERT INTO bu (description) VALUES ('C');
 INSERT INTO bu (description) VALUES ('D');
 INSERT INTO bu (description) VALUES ('E');
 INSERT INTO bu (description) VALUES ('UTEC');
-
+INSERT INTO employee (email, first_name, last_name, middle_name, ssn, bu_id, category_id, location_id, supervisor_id)
+       VALUES ('angelamelo@utc.com.mx', 'Angela', 'Melo', 'Erica', '0569874566', 1, 1, 1, 1);
+INSERT INTO employee (email, first_name, last_name, middle_name, ssn, bu_id, category_id, location_id, supervisor_id)
+       VALUES ('angrybirds@utc.com.mx', 'Ricardo', 'Treviso', 'Roque', '0588874566', 2, 3, 4, 2);
+INSERT INTO employee (email, first_name, last_name, middle_name, ssn, bu_id, category_id, location_id, supervisor_id)
+       VALUES ('arroyoolmo@utc.com.mx', 'Surish', 'Singh', 'Erlich', '0592874566', 3, 2, 1, 2);
