@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Show Recipe</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
+          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
+
+    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<!--/*@thymesVar id="recipe" type="com.crosstown.domain.Employee"*/-->
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="pannel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h1 class="panel-title" th:text="${employee.lastName}">Employee Last Name</h1>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>Category:</h5>
+                            </div>
+                            <div class="col-md-3">
+                                <ul>
+                                    <p th:each="category : ${employee.category.getDescription()}">cat three</p>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>email:</h5>
+                            </div>
+                            <div class="col-md-3">
+                                <p th:text="${employee.email}">yoyyo@gmail.com</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>social security:</h5>
+                            </div>
+                            <div class="col-md-3">
+                                <p th:text="${recipe.ssn}">0456987725</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>Location:</h5>
+                            </div>
+                            <div class="col-md-3">
+                                <p th:text="${recipe.location.getDescription()}">UTEC</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>Supervisor:</h5>
+                            </div>
+                            <div class="col-md-3">
+                                <p th:text="${recipe.supervisor.getLastName()}">Barberi</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>BU:</h5>
+                            </div>
+                            <div class="col-md-3">
+                                <p th:text="${recipe.BU.getDescription()}">Finance SS</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
