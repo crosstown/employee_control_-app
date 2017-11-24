@@ -3,7 +3,9 @@ package com.crosstown.employee_control.services;
 import com.crosstown.employee_control.domain.Employee;
 import com.crosstown.employee_control.helper.SortByLastName;
 import com.crosstown.employee_control.repositories.EmployeeRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
@@ -12,6 +14,7 @@ import java.util.*;
  * @date 11/21/17
  * @time 4:23 PM
  */
+@Slf4j
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
@@ -45,6 +48,15 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
 
         return employeeOptional.get();
+    }
+
+    @Override
+    @Transactional
+    public Employee saveEmployee(Employee employee) {
+
+        Employee savedEmployee = employeeRepository.save(employee);
+        log.debug("Saved EmployeeId:" + savedEmployee.getId());
+        return savedEmployee;
     }
 
     @Override

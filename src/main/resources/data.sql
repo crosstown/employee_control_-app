@@ -32,3 +32,5 @@ INSERT INTO employee (email, first_name, last_name, middle_name, ssn, bu_id, cat
        VALUES ('angrybirds@utc.com.mx', 'Ricardo', 'Treviso', 'Roque', '0588874566', 2, 3, 4, 2);
 INSERT INTO employee (email, first_name, last_name, middle_name, ssn, bu_id, category_id, location_id, supervisor_id)
        VALUES ('arroyoolmo@utc.com.mx', 'Surish', 'Singh', 'Erlich', '0592874566', 3, 2, 1, 2);
+INSERT INTO employee (email, first_name, last_name, middle_name, ssn, bu_id, category_id, location_id, supervisor_id)
+       VALUES ('arlonchalmo@utc.com.mx', 'Maminta', 'Surita', 'Eru', '0593334566', 1, 3, 2, 3);
