@@ -71,6 +71,22 @@
                             </div>
 
                             <div class="row">
+
+                                <div class="col-md-3 form-group">
+                                    <label>Category:</label>
+                                    <select class="form-control" th:field="*{category}">
+                                        <option th:each="category : ${allCategory}"
+                                                th:value="${category.id}"
+                                                th:text="${category.description}"
+                                        >val</option>
+                                    </select>
+                                    <select class="form-control" th:remove="all">
+                                        <option>Easy</option>
+                                        <option>Medium</option>
+                                        <option>Hard</option>
+                                    </select>
+                                </div>
+
                                 <div class="col-md-3 form-group">
                                     <label>Location:</label>
                                     <select class="form-control" th:field="*{location}">

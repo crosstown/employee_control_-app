@@ -24,54 +24,61 @@
             <div class="pannel-group">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h1 class="panel-title" th:text="${employee.lastName}">Employee Last Name</h1>
+                        <h1 class="panel-title" th:text="${employee.middleName} ? ${(employee.lastName) + ', '
+                         + (employee.firstName) + ' ' + (employee.middleName)} : ${(employee.lastName) + ', '
+                        + (employee.firstName)}">Hola</h1>
+
                     </div>
-                    <div class="panel-body">
+
+
+                    <div class="panel-body" padding-top: 5px;>
                         <div class="row">
                             <div class="col-md-3">
-                                <h5>Category:</h5>
+                                <p>email:</p>
                             </div>
                             <div class="col-md-3">
-                                <ul>
-                                    <p th:each="category : ${employee.category.getDescription()}">cat three</p>
-                                </ul>
+                                <b><p th:text="${employee.email}">yoyyo@gmail.com</p></b>
+                            </div>
+                            <div class="col-md-3">
+                                <p>social security:</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p th:text="${employee.ssn}">0456987725</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
-                                <h5>email:</h5>
+                                <p>Location:</p>
                             </div>
                             <div class="col-md-3">
-                                <p th:text="${employee.email}">yoyyo@gmail.com</p>
+                                <p th:text="${employee.location.getDescription()}">UTEC</p>
                             </div>
                             <div class="col-md-3">
-                                <h5>social security:</h5>
+                                <p>Supervisor:</p>
                             </div>
                             <div class="col-md-3">
-                                <p th:text="${recipe.ssn}">0456987725</p>
+                                <p th:text="${(employee.supervisor.firstName) + ' ' +
+                                (employee.supervisor.getLastName())}">Barberi</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
-                                <h5>Location:</h5>
+                                <p>BU:</p>
                             </div>
                             <div class="col-md-3">
-                                <p th:text="${recipe.location.getDescription()}">UTEC</p>
+                                <p th:text="${employee.bu.description}">Finance SS</p>
                             </div>
-                            <div class="col-md-3">
-                                <h5>Supervisor:</h5>
-                            </div>
-                            <div class="col-md-3">
-                                <p th:text="${recipe.supervisor.getLastName()}">Barberi</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <h5>BU:</h5>
-                            </div>
-                            <div class="col-md-3">
-                                <p th:text="${recipe.BU.getDescription()}">Finance SS</p>
-                            </div>
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <p>Category:</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div>
+                                            <p th:text="${employee.category.getDescription()}">cat three</p>
+                                        </div>
+                                    </div>
+                                </div>
 
                         </div>
                     </div>
