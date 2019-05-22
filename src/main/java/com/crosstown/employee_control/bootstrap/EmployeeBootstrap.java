@@ -4,7 +4,10 @@ import com.crosstown.employee_control.domain.*;
 import com.crosstown.employee_control.repositories.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -41,6 +44,13 @@ public class EmployeeBootstrap implements ApplicationListener<ContextRefreshedEv
     @Transactional
     public void onApplicationEvent(ContextRefreshedEvent event) {
         employeeRepository.saveAll(getEmployees());
+
+            PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            String passwd = passwordEncoder.encode("password"); //hashed pass
+            String yo = passwordEncoder.encode("yo");
+            System.out.println("my hashed password: " + passwd);   // show the hashed pass
+            System.out.println("my hashed yo: " + yo);
+
         log.debug("Loading Bootstrap Data");
     }
 

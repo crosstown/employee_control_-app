@@ -31,10 +31,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         Set<Employee> employeeList = new HashSet<>();
 
         employeeRepository.findAll().iterator().forEachRemaining(employeeList::add);
-        List sortedList = new ArrayList(employeeList);
-        Collections.sort(sortedList, new SortByLastName());
+//        List sortedList = new ArrayList(employeeList);
+//        Collections.sort(sortedList, new SortByLastName());
 
-        employeeList = new HashSet<>(sortedList);
+//        employeeList = new HashSet<>(sortedList);
         return employeeList;
     }
 
@@ -55,7 +55,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Employee saveEmployee(Employee employee) {
 
         Employee savedEmployee = employeeRepository.save(employee);
-        log.debug("Saved EmployeeId:" + savedEmployee.getId());
+//        log.debug("Saved EmployeeId:" + savedEmployee.getId());
         return savedEmployee;
     }
 

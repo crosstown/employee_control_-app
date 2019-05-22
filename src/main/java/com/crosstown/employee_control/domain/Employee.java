@@ -37,4 +37,8 @@ public class Employee {
     @OneToOne(fetch = FetchType.EAGER)
     private BU bu;
 
+    @Override
+    public String toString() {
+        return "[" + this.firstName + " " + this.lastName + "]";
+    }
 }

@@ -1,3 +1,5 @@
+INSERT INTO USER (USER_ID, USERNAME, PASSWORD) VALUES ('1200', 'fsimon', '$2a$10$6lpFHrNzlaodQDpR6NKv..Bo2fAlK4YPlsUdnnyydoeKatGSJI8M.');
+INSERT INTO USER (USER_ID, USERNAME, PASSWORD) VALUES ('1100', 'yo', '$2a$10$n6tyTBmDkOj5LyRjiSkoQ.Soyd6c6HSuhPLJTf67L21X3QuRsaY.S');
 INSERT INTO category (description) VALUES ('Developer Class 1');
 INSERT INTO category (description) VALUES ('Developer Class 2');
 INSERT INTO category (description) VALUES ('Developer Class 3');
